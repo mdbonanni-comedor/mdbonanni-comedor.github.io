@@ -1,0 +1,50 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOXA Player — Payment demo</title><link rel="icon" href="../img/voxa_logo.png"><link rel="stylesheet" href="../estilo.css">
+<style>#pw{min-height:520px;background:#fff;border-radius:10px;margin-top:16px;display:none}.btn{border:0;cursor:pointer;margin-right:10px}</style></head><body>
+<header><div class="wrap"><nav><a class="brand" href="../index.html"><img src="../img/winy.svg" alt="">WINY DEVELOPERS</a>
+<div class="links"><a href="index.html">VOXA Player</a><a href="terminos.html">Términos / Terms</a><a href="privacidad.html">Privacidad / Privacy</a><a href="soporte.html">Soporte / Support</a></div></nav></div></header>
+<main><div class="wrap">
+<h1>VOXA Player — Payment demo</h1>
+<p>Esta página abre el mismo formulario de pago que muestra la app VOXA Player en el televisor (Paymentwall Smart TV SDK), con un televisor de prueba.<br>
+<span class="muted">This page opens the same payment form that the VOXA Player TV app shows (Paymentwall Smart TV SDK), using a test TV.</span></p>
+<div class="card">
+<p><b>Licencia anual · Annual license</b> — USD 10 (365 días / days)<br><b>Licencia de por vida · Lifetime license</b> — USD 18</p>
+<p class="muted">Código de TV de prueba · Test TV code: <b>TEST-2345</b></p>
+<button class="btn" onclick="buy('annual')">Comprar anual · Buy annual</button>
+<button class="btn" onclick="buy('lifetime')">Comprar de por vida · Buy lifetime</button>
+<p id="st" class="muted" style="margin-top:12px"></p>
+</div>
+<div id="pw"></div>
+</div></main>
+<footer><div class="wrap">© 2026 WINY DEVELOPERS · <a href="mailto:soporte@winydevelopers.com">soporte@winydevelopers.com</a></div></footer>
+<script>
+var KEY = 'e5b569b54e57e96b3b93f4956a85c4e1', DEV = 'TEST2345', PRICE = { annual: '10.00', lifetime: '18.00' }, ready = false;
+var API = 'https://voxa-licencias.mdbonanni.workers.dev';
+function st(t) { document.getElementById('st').textContent = t; }
+function load(cb) {
+  if (ready) return cb();
+  var s = document.createElement('script');
+  s.src = 'https://api.paymentwall.com/js/pwsmart/ver/pwsmart.1.4.js';
+  s.onload = function () { PWSmartGateway.init({ key: KEY, containerId: 'pw', lang: (navigator.language || 'en').slice(0, 2), brand: 'lgtv' }); ready = true; cb(); };
+  s.onerror = function () { st('No se pudo cargar Paymentwall · Could not load Paymentwall'); };
+  document.body.appendChild(s);
+}
+function check() {
+  fetch(API + '/voxa/status?d=' + DEV).then(function (r) { return r.json(); }).then(function (j) {
+    st('Estado de la licencia · License status: ' + j.plan + (j.until ? ' (' + new Date(j.until).toLocaleDateString() + ')' : ''));
+  }).catch(function () {});
+}
+function buy(plan) {
+  st('...');
+  load(function () {
+    document.getElementById('pw').style.display = 'block';
+    PWSmartGateway.showPaymentForm({
+      productId: 'voxa_' + plan, productName: plan === 'annual' ? 'VOXA Player - 1 year' : 'VOXA Player - Lifetime',
+      currency: 'USD', amount: PRICE[plan], userId: DEV, showBackButton: true,
+      onExit: function () { document.getElementById('pw').style.display = 'none'; }
+    }, function () { document.getElementById('pw').style.display = 'none'; st('Pago OK · Payment OK'); setTimeout(check, 4000); },
+    function (e) { document.getElementById('pw').style.display = 'none'; st((e && e.message) || 'Pago cancelado · Payment cancelled'); });
+  });
+}
+check();
+</script></body></html>
