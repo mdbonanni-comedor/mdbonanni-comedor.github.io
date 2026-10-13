@@ -1,17 +1,30 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WINY DEVELOPERS</title><link rel="icon" href="img/winy.svg"><link rel="stylesheet" href="estilo.css"></head><body>
+<title>WINY DEVELOPERS</title><meta name="title-en" content="WINY DEVELOPERS"><script>(function(){var l;try{l=localStorage.getItem('lang')}catch(e){}if(location.hash==='#en')l='en';
+if(l!=='es'&&l!=='en')l=/^es/i.test(navigator.language||'')?'es':'en';document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l})();</script><link rel="icon" href="img/winy.svg"><link rel="stylesheet" href="estilo.css"></head><body>
 <header><div class="wrap"><nav><a class="brand" href="index.html"><img src="img/winy.svg" alt="">WINY DEVELOPERS</a>
-<div class="links"><a href="index.html#apps">Desarrollos</a><a href="voxa/index.html">VOXA Player</a><a href="index.html#contacto">Contacto</a></div></nav></div></header>
-<main><div class="wrap">
+<div class="links"><a data-l="es" href="index.html#apps">Desarrollos</a><a data-l="en" href="index.html#apps-en">Apps</a><a href="voxa/index.html">VOXA Player</a><a data-l="es" href="index.html#contacto">Contacto</a><a data-l="en" href="index.html#contact">Contact</a><span class="lsel"><button data-set="es">ES</button><button data-set="en">EN</button></span></div></nav></div></header>
+<main><div class="wrap"><div data-l="es">
 <div style="padding:30px 0 10px"><h1 style="font-size:40px">Software simple para problemas reales.</h1>
-<p style="font-size:19px;max-width:640px">WINY DEVELOPERS es una organización de desarrolladores que crea e investiga aplicaciones para televisores, celulares y la web, y automatizaciones con Make y Power Platform.</p>
-<p class="muted lang">A developer organization that builds and researches apps for TVs, phones and the web, plus automations with Make and Power Platform.</p></div>
-<h2 id="apps">Desarrollos / Apps</h2>
+<p style="font-size:19px;max-width:640px">WINY DEVELOPERS es una organización de desarrolladores que crea e investiga aplicaciones para televisores, celulares y la web, y automatizaciones con Make y Power Platform.</p></div>
+<h2 id="apps">Desarrollos</h2>
 <div class="apps">
 <a class="app" href="voxa/index.html"><img src="img/voxa_logo.png" alt=""><div><b>VOXA Player</b><span>Reproductor de listas M3U para Smart TV con subtítulos traducidos con IA.</span><span class="muted">LG webOS · Samsung Tizen · Android TV</span></div></a>
-<div class="app soon"><div class="ph">+</div><div><b>Próximamente</b><span>Nuevos desarrollos en camino.</span><span class="muted">Coming soon</span></div></div>
+<div class="app soon"><div class="ph">+</div><div><b>Próximamente</b><span>Nuevos desarrollos en camino.</span></div></div>
 </div>
-<h2 id="contacto">Contacto / Contact</h2>
-<div class="card"><a href="mailto:soporte@winydevelopers.com"><b>soporte@winydevelopers.com</b></a><br><span class="muted">Consultas, soporte y propuestas · Questions, support and proposals</span></div>
-</div></main>
-<footer><div class="wrap">© 2026 WINY DEVELOPERS · <a href="mailto:soporte@winydevelopers.com">soporte@winydevelopers.com</a></div></footer></body></html>
+<h2 id="contacto">Contacto</h2>
+<div class="card"><a href="mailto:soporte@winydevelopers.com"><b>soporte@winydevelopers.com</b></a><br><span class="muted">Consultas, soporte y propuestas</span></div>
+</div><div data-l="en">
+<div style="padding:30px 0 10px"><h1 style="font-size:40px">Simple software for real problems.</h1>
+<p style="font-size:19px;max-width:640px">WINY DEVELOPERS is a developer organization that builds and researches apps for TVs, phones and the web, plus automations with Make and Power Platform.</p></div>
+<h2 id="apps-en">Apps</h2>
+<div class="apps">
+<a class="app" href="voxa/index.html"><img src="img/voxa_logo.png" alt=""><div><b>VOXA Player</b><span>M3U playlist player for Smart TVs with AI-translated subtitles.</span><span class="muted">LG webOS · Samsung Tizen · Android TV</span></div></a>
+<div class="app soon"><div class="ph">+</div><div><b>Coming soon</b><span>New projects on the way.</span></div></div>
+</div>
+<h2 id="contact">Contact</h2>
+<div class="card"><a href="mailto:soporte@winydevelopers.com"><b>soporte@winydevelopers.com</b></a><br><span class="muted">Questions, support and proposals</span></div>
+</div></div></main>
+<footer><div class="wrap">© 2026 WINY DEVELOPERS · <a href="mailto:soporte@winydevelopers.com">soporte@winydevelopers.com</a></div></footer><script>(function(){var t={es:document.title,en:document.querySelector('meta[name=title-en]').content};
+function set(l){document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l;document.title=t[l];try{localStorage.setItem('lang',l)}catch(e){}}
+set(document.documentElement.getAttribute('data-l'));
+var b=document.querySelectorAll('.lsel button');for(var i=0;i<b.length;i++)b[i].onclick=function(){set(this.getAttribute('data-set'))};})();</script></body></html>

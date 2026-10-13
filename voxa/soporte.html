@@ -1,19 +1,26 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Soporte — VOXA Player</title><link rel="icon" href="../img/voxa_logo.png"><link rel="stylesheet" href="../estilo.css"></head><body>
+<title>Soporte — VOXA Player</title><meta name="title-en" content="Support — VOXA Player"><script>(function(){var l;try{l=localStorage.getItem('lang')}catch(e){}if(location.hash==='#en')l='en';
+if(l!=='es'&&l!=='en')l=/^es/i.test(navigator.language||'')?'es':'en';document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l})();</script><link rel="icon" href="../img/voxa_logo.png"><link rel="stylesheet" href="../estilo.css"></head><body>
 <header><div class="wrap"><nav><a class="brand" href="../index.html"><img src="../img/winy.svg" alt="">WINY DEVELOPERS</a>
-<div class="links"><a href="../index.html">WINY DEVELOPERS</a><a href="index.html">VOXA Player</a><a href="terminos.html">Términos / Terms</a><a href="privacidad.html">Privacidad / Privacy</a><a href="soporte.html">Soporte / Support</a></div></nav></div></header>
-<main><div class="wrap">
-<h1>Soporte / Support</h1>
-<div class="card"><p>Escribinos a / Write to us: <a href="mailto:soporte@winydevelopers.com"><b>soporte@winydevelopers.com</b></a></p>
-<p class="muted">Respondemos en 2 días hábiles. Contanos el modelo de tu televisor y qué pasa. Nunca nos envíes el usuario y la contraseña de tu lista.<br>
-We reply within 2 business days. Tell us your TV model and what happens. Never send us your playlist username or password.</p></div>
+<div class="links"><a href="../index.html">WINY DEVELOPERS</a><a href="index.html">VOXA Player</a><a href="terminos.html"><span data-l="es">Términos</span><span data-l="en">Terms</span></a><a href="privacidad.html"><span data-l="es">Privacidad</span><span data-l="en">Privacy</span></a><a href="soporte.html"><span data-l="es">Soporte</span><span data-l="en">Support</span></a><span class="lsel"><button data-set="es">ES</button><button data-set="en">EN</button></span></div></nav></div></header>
+<main><div class="wrap"><div data-l="es">
+<h1>Soporte</h1>
+<div class="card"><p>Escribinos a: <a href="mailto:soporte@winydevelopers.com"><b>soporte@winydevelopers.com</b></a></p>
+<p class="muted">Respondemos en 2 días hábiles. Contanos el modelo de tu televisor y qué pasa. Nunca nos envíes el usuario y la contraseña de tu lista.</p></div>
 <h2>Preguntas frecuentes</h2>
 <h3>¿VOXA Player trae canales?</h3><p>No. Es solo un reproductor: tenés que cargar tu propia lista M3U. Para probarlo, en la primera pantalla elegí "Probar con la lista de demostración".</p>
 <h3>Un canal no se ve</h3><p>Probá ese canal en otro equipo: si tampoco anda, el problema es del proveedor de la lista. Algunos formatos de video no son compatibles con todos los televisores.</p>
 <h3>Los subtítulos con IA no aparecen</h3><p>Necesitás una clave de API de un proveedor de IA (Ajustes → Claves API para subtítulos). Algunos canales no permiten separar el audio; en ese caso la app avisa y sigue sin traducción.</p>
+</div><div data-l="en">
+<h1>Support</h1>
+<div class="card"><p>Write to us: <a href="mailto:soporte@winydevelopers.com"><b>soporte@winydevelopers.com</b></a></p>
+<p class="muted">We reply within 2 business days. Tell us your TV model and what happens. Never send us your playlist username or password.</p></div>
 <h2>FAQ</h2>
 <h3>Does VOXA Player include channels?</h3><p>No. It is only a player: you need to add your own M3U playlist. To try it, choose "Try the demo playlist" on the first screen.</p>
 <h3>A channel doesn't play</h3><p>Try that channel on another device: if it fails there too, it's a provider issue. Some video formats are not supported by every TV.</p>
 <h3>AI subtitles don't show</h3><p>You need an API key from an AI provider (Settings → Subtitle API keys). Some channels don't allow separating the audio; the app will tell you and keep playing without translation.</p>
-</div></main>
-<footer><div class="wrap">© 2026 WINY DEVELOPERS · <a href="mailto:soporte@winydevelopers.com">soporte@winydevelopers.com</a></div></footer></body></html>
+</div></div></main>
+<footer><div class="wrap">© 2026 WINY DEVELOPERS · <a href="mailto:soporte@winydevelopers.com">soporte@winydevelopers.com</a></div></footer><script>(function(){var t={es:document.title,en:document.querySelector('meta[name=title-en]').content};
+function set(l){document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l;document.title=t[l];try{localStorage.setItem('lang',l)}catch(e){}}
+set(document.documentElement.getAttribute('data-l'));
+var b=document.querySelectorAll('.lsel button');for(var i=0;i<b.length;i++)b[i].onclick=function(){set(this.getAttribute('data-set'))};})();</script></body></html>
